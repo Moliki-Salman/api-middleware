@@ -5,6 +5,7 @@ const { signup } =require('../controllers/signup')
 const{newLogin} =require('../controllers/login')
 const{ mid } = require('../middleware/mwd')
 const{ verifyAuth } =require('../middleware/auth')
+const{ insertCus } =require("../controllers/customer-controller")
 
 /*
 middleware can be used for authentication, middleware can run before the controller runs that is why we called it
@@ -13,9 +14,10 @@ about can run
 */
 router.get('/newlogin', newLogin)
 router.get("/", home);
+router.get("/register", insertCus);
 router.post("/signup",  signup);
 router.get("/login", mid, login);
-
 router.get('/details', verifyAuth, details)
+
 
 module.exports = { router };
