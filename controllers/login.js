@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { getConnection, runQueryValues, loginSyntax } = require("../model/dpPool");
 const secret = "tech4dev";
+
 const newLogin = async (req, res) => {
   const credentials = {
     username: req.body.username,

@@ -1,13 +1,19 @@
 const mysql = require("mysql2");
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: "bgmtwiyfh2dxr5plg7os-mysql.services.clever-cloud.com",
-  password: "j35HEHSAcHF56lCyAMhz",
-  user: "uycm4qfpbv5zgizs",
-  database: "bgmtwiyfh2dxr5plg7os",
+  // host: "bgmtwiyfh2dxr5plg7os-mysql.services.clever-cloud.com",
+  // password: "j35HEHSAcHF56lCyAMhz",
+  // user: "uycm4qfpbv5zgizs",
+  // database: "bgmtwiyfh2dxr5plg7os",
+  host: "localhost",
+  password: "1234",
+  user: "root",
+  database: "user_table",
 });
+
 function getConnection() {
   return new Promise((resolve, reject) => {
+    //the getConnection() here is a method in mySql
     pool.getConnection((err, connection) => {
       if (err) {
         reject(err);
